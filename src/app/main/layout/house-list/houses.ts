@@ -1,18 +1,18 @@
-export const house1images = ["/assets/house1.jpg", "/assets/house1 in.jpg", "/assets/house1 room.jpg"]
-export const house2images = ["/assets/house2 in.jpg", "/assets/house2 kit.jpg", "/assets/house2.jpg"]
-export const house3images = ["/assets/house3.jpg", "/assets/house3 in.jpg", "/assets/house3 bat.jpg"]
-export const house4images = ["/assets/house4.jpg", "/assets/house4 in.jpg", "/assets/house4 bed.jpg"]
-export const house5images = ["/assets/house 5in.jpg", "/assets/house 5 bat.jpg", "/assets/house 5 bed.jpg"]
-export const house6images = ["/assets/house 6 bed.jpg", "/assets/house 6 in.jpg", "/assets/house 6 bath.jpg"]
-export const house7images = ["/assets/house 7 in.jpg", "/assets/house 7 bed.jpg", "/assets/house 7 bat.jpg"]
-export const house8images = ["/assets/house 8 bed.jpg", "/assets/house 8 in.jpg", "/assets/house 8 bat.jpg"]
-export const house9images = ["/assets/house 9 in.jpg", "/assets/house 9 bath.jpg", "/assets/house 9 bed.jpg"]
-export const house10images = ["/assets/house 10 bed.jpg", "/assets/house 10 in.jpg", "/assets/house 10 kit.jpg"]
-export const house11images = ["/assets/house 11 kit.jpg", "/assets/house 11 in.jpg", "/assets/house 11 bed.jpg"]
-export const house12images = ["/assets/house 12 bed.jpg", "/assets/house 12 in.jpg", "/assets/house 12 kit.jpg"]
-export const house13images = ["/assets/house 13.jpg", "/assets/house 13 bed.jpg", "/assets/house 13 kit.jpg"]
+export const house1images = ["assets/house1.jpg", "assets/house1 in.jpg", "assets/house1 room.jpg"]
+export const house2images = ["assets/house2 in.jpg", "assets/house2 kit.jpg", "assets/house2.jpg"]
+export const house3images = ["assets/house3.jpg", "assets/house3 in.jpg", "assets/house3 bat.jpg"]
+export const house4images = ["assets/house4.jpg", "assets/house4 in.jpg", "assets/house4 bed.jpg"]
+export const house5images = ["assets/house 5in.jpg", "assets/house 5 bat.jpg", "assets/house 5 bed.jpg"]
+export const house6images = ["assets/house 6 bed.jpg", "assets/house 6 in.jpg", "assets/house 6 bath.jpg"]
+export const house7images = ["assets/house 7 in.jpg", "assets/house 7 bed.jpg", "assets/house 7 bat.jpg"]
+export const house8images = ["assets/house 8 bed.jpg", "assets/house 8 in.jpg", "assets/house 8 bat.jpg"]
+export const house9images = ["assets/house 9 in.jpg", "assets/house 9 bath.jpg", "assets/house 9 bed.jpg"]
+export const house10images = ["assets/house 10 bed.jpg", "assets/house 10 in.jpg", "assets/house 10 kit.jpg"]
+export const house11images = ["assets/house 11 kit.jpg", "assets/house 11 in.jpg", "assets/house 11 bed.jpg"]
+export const house12images = ["assets/house 12 bed.jpg", "assets/house 12 in.jpg", "assets/house 12 kit.jpg"]
+export const house13images = ["assets/house 13.jpg", "assets/house 13 bed.jpg", "assets/house 13 kit.jpg"]
 // export const icons = {
-//   "/assets/logo.png"
+//   "assets/logo.png"
 // }
 export interface RatingType {
   name: string
