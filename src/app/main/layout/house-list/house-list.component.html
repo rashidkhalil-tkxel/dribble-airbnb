@@ -1,0 +1,415 @@
+<div class="w-100 p-4 pt-2">
+
+    <div class="row">
+        <ng-container *ngFor="let house of data">
+            <div class="pt-3 ps-0 pe-4 col-lg-3 col-md-6" >
+                <div class="house-card  house-detail-list">
+                    <div class="likeBtn" (click)="doFavourite(house)" [class.fav]="house.isFavourite">
+                        <svg   stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24"
+                            aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="house-card__image"><img src="{{house.images[0]}}" alt=""></div>
+                    <div class="house-card__content"  (click)="openHouseDetails(house)">
+                        <h2>{{house.name}}</h2>
+                        <p class="house-card__location">{{house.location}}</p>
+                        <div class="house-card__price">
+                            <p><span class="value">${{house.price_per_night}}</span> / night</p><span class="rating"><svg stroke="currentColor"
+                                    fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="20" width="20"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g fill="none">
+                                        <path d="M0 0h24v24H0V0z"></path>
+                                        <path d="M0 0h24v24H0V0z"></path>
+                                    </g>
+                                    <path
+                                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z">
+                                    </path>
+                                </svg>
+                                <!-- {{house.average_rating}} -->
+                                {{house.average_rating| number : '1.1-2'}}
+							<!-- {{house.average_rating === 5 && '.0'}} -->
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+
+    <!-- <div class="row"> 
+        <div class="pt-3 ps-0 pe-4 col-lg-3 col-md-6" >
+            <div class="house-card  house-detail-list" (click)="openHouseDetails()">
+                <div class="likeBtn "><svg stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24"
+                        aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z">
+                        </path>
+                    </svg></div>
+                <div class="house-card__image"><img src="assets/house1.jpg" alt=""></div>
+                <div class="house-card__content">
+                    <h2>Whitefish Estate</h2>
+                    <p class="house-card__location">Holmes Run Pky Alexandria, Virginia(VA), 22304</p>
+                    <div class="house-card__price">
+                        <p><span class="value">$10,000</span> / night</p><span class="rating"><svg stroke="currentColor"
+                                fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="20" width="20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g fill="none">
+                                    <path d="M0 0h24v24H0V0z"></path>
+                                    <path d="M0 0h24v24H0V0z"></path>
+                                </g>
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z">
+                                </path>
+                            </svg>5.0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pt-3 ps-0 pe-4 col-lg-3 col-md-6" >
+            <div class="house-card  house-detail-list" (click)="openHouseDetails()">
+                <div class="likeBtn "><svg stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24"
+                        aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z">
+                        </path>
+                    </svg></div>
+                <div class="house-card__image"><img src="assets/house2 in.jpg" alt=""></div>
+                <div class="house-card__content">
+                    <h2>Luxury stay in Weston, Saint James, Barbados</h2>
+                    <p class="house-card__location">New Castle Rd Lowellville, Ohio(OH), 44436</p>
+                    <div class="house-card__price">
+                        <p><span class="value">$1,500</span> / night</p><span class="rating"><svg stroke="currentColor"
+                                fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="20" width="20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g fill="none">
+                                    <path d="M0 0h24v24H0V0z"></path>
+                                    <path d="M0 0h24v24H0V0z"></path>
+                                </g>
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z">
+                                </path>
+                            </svg>4.5</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pt-3 ps-0 pe-4 col-lg-3 col-md-6" >
+            <div class="house-card  house-detail-list" (click)="openHouseDetails()">
+                <div class="likeBtn "><svg stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24"
+                        aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z">
+                        </path>
+                    </svg></div>
+                <div class="house-card__image"><img src="assets/house3.jpg" alt=""></div>
+                <div class="house-card__content">
+                    <h2>Numero 22 - Lake Como - Design Living &amp; Lake View</h2>
+                    <p class="house-card__location">Pennhurst Ct Wilmington, North Carolina(NC), 28405</p>
+                    <div class="house-card__price">
+                        <p><span class="value">$850</span> / night</p><span class="rating"><svg stroke="currentColor"
+                                fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="20" width="20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g fill="none">
+                                    <path d="M0 0h24v24H0V0z"></path>
+                                    <path d="M0 0h24v24H0V0z"></path>
+                                </g>
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z">
+                                </path>
+                            </svg>4.8</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pt-3 ps-0 pe-4 col-lg-3 col-md-6" >
+            <div class="house-card  house-detail-list" (click)="openHouseDetails()">
+                <div class="likeBtn "><svg stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24"
+                        aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z">
+                        </path>
+                    </svg></div>
+                <div class="house-card__image"><img src="assets/house4.jpg" alt=""></div>
+                <div class="house-card__content">
+                    <h2>7,500 sq ft Private Beachfront Estate</h2>
+                    <p class="house-card__location">Cormorant Rd Delray Beach, Florida(FL), 33444</p>
+                    <div class="house-card__price">
+                        <p><span class="value">$3,500</span> / night</p><span class="rating"><svg stroke="currentColor"
+                                fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="20" width="20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g fill="none">
+                                    <path d="M0 0h24v24H0V0z"></path>
+                                    <path d="M0 0h24v24H0V0z"></path>
+                                </g>
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z">
+                                </path>
+                            </svg>4.7</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pt-3 ps-0 pe-4 col-lg-3 col-md-6" >
+            <div class="house-card  house-detail-list" (click)="openHouseDetails()">
+                <div class="likeBtn "><svg stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24"
+                        aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z">
+                        </path>
+                    </svg></div>
+                <div class="house-card__image"><img src="assets/house 5in.jpg" alt=""></div>
+                <div class="house-card__content">
+                    <h2>Palm Springs Bungalow Hideaway</h2>
+                    <p class="house-card__location">Evergreen CtAdams, Wisconsin(WI), 53910</p>
+                    <div class="house-card__price">
+                        <p><span class="value">$2,600</span> / night</p><span class="rating"><svg stroke="currentColor"
+                                fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="20" width="20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g fill="none">
+                                    <path d="M0 0h24v24H0V0z"></path>
+                                    <path d="M0 0h24v24H0V0z"></path>
+                                </g>
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z">
+                                </path>
+                            </svg>4.5</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pt-3 ps-0 pe-4 col-lg-3 col-md-6" >
+            <div class="house-card  house-detail-list" (click)="openHouseDetails()">
+                <div class="likeBtn "><svg stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24"
+                        aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z">
+                        </path>
+                    </svg></div>
+                <div class="house-card__image"><img src="assets/house 6 bed.jpg" alt="">
+                </div>
+                <div class="house-card__content">
+                    <h2>Sandy Beachfront Oasis</h2>
+                    <p class="house-card__location">W El Dorado St West Covina, California(CA), 91790</p>
+                    <div class="house-card__price">
+                        <p><span class="value">$864</span> / night</p><span class="rating"><svg stroke="currentColor"
+                                fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="20" width="20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g fill="none">
+                                    <path d="M0 0h24v24H0V0z"></path>
+                                    <path d="M0 0h24v24H0V0z"></path>
+                                </g>
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z">
+                                </path>
+                            </svg>5.0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pt-3 ps-0 pe-4 col-lg-3 col-md-6" >
+            <div class="house-card  house-detail-list" (click)="openHouseDetails()">
+                <div class="likeBtn "><svg stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24"
+                        aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z">
+                        </path>
+                    </svg></div>
+                <div class="house-card__image"><img src="assets/house 7 in.jpg" alt="">
+                </div>
+                <div class="house-card__content">
+                    <h2>The Secret Westside Lounge</h2>
+                    <p class="house-card__location">Farm Valley Dr Canton, Georgia(GA), 30115</p>
+                    <div class="house-card__price">
+                        <p><span class="value">$4,325</span> / night</p><span class="rating"><svg stroke="currentColor"
+                                fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="20" width="20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g fill="none">
+                                    <path d="M0 0h24v24H0V0z"></path>
+                                    <path d="M0 0h24v24H0V0z"></path>
+                                </g>
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z">
+                                </path>
+                            </svg>4.8</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pt-3 ps-0 pe-4 col-lg-3 col-md-6" >
+            <div class="house-card  house-detail-list" (click)="openHouseDetails()">
+                <div class="likeBtn "><svg stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24"
+                        aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z">
+                        </path>
+                    </svg></div>
+                <div class="house-card__image"><img src="assets/house 8 bed.jpg" alt="">
+                </div>
+                <div class="house-card__content">
+                    <h2>Hawthorne Crown Jewel</h2>
+                    <p class="house-card__location">S Pittsburg Mountain Rd Sewanee, Tennessee(TN), 37375</p>
+                    <div class="house-card__price">
+                        <p><span class="value">$3,500</span> / night</p><span class="rating"><svg stroke="currentColor"
+                                fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="20" width="20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g fill="none">
+                                    <path d="M0 0h24v24H0V0z"></path>
+                                    <path d="M0 0h24v24H0V0z"></path>
+                                </g>
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z">
+                                </path>
+                            </svg>5.0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pt-3 ps-0 pe-4 col-lg-3 col-md-6" >
+            <div class="house-card  house-detail-list" (click)="openHouseDetails()">
+                <div class="likeBtn "><svg stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24"
+                        aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z">
+                        </path>
+                    </svg></div>
+                <div class="house-card__image"><img src="assets/house 9 in.jpg" alt="">
+                </div>
+                <div class="house-card__content">
+                    <h2>The Bungalow at 7th Avenue</h2>
+                    <p class="house-card__location">S Virginia Dare Trl Nags Head, North Carolina(NC),</p>
+                    <div class="house-card__price">
+                        <p><span class="value">$2,250</span> / night</p><span class="rating"><svg stroke="currentColor"
+                                fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="20" width="20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g fill="none">
+                                    <path d="M0 0h24v24H0V0z"></path>
+                                    <path d="M0 0h24v24H0V0z"></path>
+                                </g>
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z">
+                                </path>
+                            </svg>4.9</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pt-3 ps-0 pe-4 col-lg-3 col-md-6" >
+            <div class="house-card  house-detail-list" (click)="openHouseDetails()">
+                <div class="likeBtn "><svg stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24"
+                        aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z">
+                        </path>
+                    </svg></div>
+                <div class="house-card__image"><img src="assets/house 10 bed.jpg" alt="">
+                </div>
+                <div class="house-card__content">
+                    <h2>Downtown Penthouse Oasis</h2>
+                    <p class="house-card__location">Orient St Boylston, Massachusetts(MA), 01505</p>
+                    <div class="house-card__price">
+                        <p><span class="value">$1,475</span> / night</p><span class="rating"><svg stroke="currentColor"
+                                fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="20" width="20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g fill="none">
+                                    <path d="M0 0h24v24H0V0z"></path>
+                                    <path d="M0 0h24v24H0V0z"></path>
+                                </g>
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z">
+                                </path>
+                            </svg>5.0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pt-3 ps-0 pe-4 col-lg-3 col-md-6" >
+            <div class="house-card  house-detail-list" (click)="openHouseDetails()">
+                <div class="likeBtn "><svg stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24"
+                        aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z">
+                        </path>
+                    </svg></div>
+                <div class="house-card__image"><img src="assets/house 11 kit.jpg" alt="">
+                </div>
+                <div class="house-card__content">
+                    <h2>Sandy Beachfront Oasis</h2>
+                    <p class="house-card__location">School St Lake Andes, South Dakota(SD), 57356</p>
+                    <div class="house-card__price">
+                        <p><span class="value">$745</span> / night</p><span class="rating"><svg stroke="currentColor"
+                                fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="20" width="20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g fill="none">
+                                    <path d="M0 0h24v24H0V0z"></path>
+                                    <path d="M0 0h24v24H0V0z"></path>
+                                </g>
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z">
+                                </path>
+                            </svg>4.5</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pt-3 ps-0 pe-4 col-lg-3 col-md-6" >
+            <div class="house-card  house-detail-list" (click)="openHouseDetails()">
+                <div class="likeBtn "><svg stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24"
+                        aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z">
+                        </path>
+                    </svg></div>
+                <div class="house-card__image"><img src="assets/house 12 bed.jpg" alt="">
+                </div>
+                <div class="house-card__content">
+                    <h2>Palm Springs Bungalow Hideaway</h2>
+                    <p class="house-card__location">Green Castle Dr Goose Creek, South Carolina(SC), 29445</p>
+                    <div class="house-card__price">
+                        <p><span class="value">$2,347</span> / night</p><span class="rating"><svg stroke="currentColor"
+                                fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="20" width="20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g fill="none">
+                                    <path d="M0 0h24v24H0V0z"></path>
+                                    <path d="M0 0h24v24H0V0z"></path>
+                                </g>
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z">
+                                </path>
+                            </svg>4.9</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pt-3 ps-0 pe-4 col-lg-3 col-md-6" >
+            <div class="house-card  house-detail-list" (click)="openHouseDetails()">
+                <div class="likeBtn "><svg stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24"
+                        aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z">
+                        </path>
+                    </svg></div>
+                <div class="house-card__image"><img src="assets/house 13.jpg" alt=""></div>
+                <div class="house-card__content">
+                    <h2>West Shore Country Hale</h2>
+                    <p class="house-card__location">13th St Westminster, California(CA), 92683</p>
+                    <div class="house-card__price">
+                        <p><span class="value">$1,400</span> / night</p><span class="rating"><svg stroke="currentColor"
+                                fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="20" width="20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g fill="none">
+                                    <path d="M0 0h24v24H0V0z"></path>
+                                    <path d="M0 0h24v24H0V0z"></path>
+                                </g>
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z">
+                                </path>
+                            </svg>4.7</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div>

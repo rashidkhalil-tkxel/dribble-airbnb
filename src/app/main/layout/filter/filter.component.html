@@ -1,0 +1,64 @@
+
+<!-- animate__animated animate__bounceInRight -->
+<div id="filter-back"  class=" filter-background"  style="position: fixed; height: 100vh; width: 100%; top: 0px; left: 0px; z-index: 1000;"  (click)="onFilterDivClick();">
+    <div id="filter" class="filter show" style="transform: translateX(0%) translateZ(0px);" >
+        <div>
+            <div class="filter__header filter__section">
+                <h5>Filter</h5><span> Clear all</span>
+            </div>
+            <div class="filter__price filter__section">
+                <h5>Price Range</h5><small>The average nightly price is $133</small>
+                <div class="checkout__date" style="margin-top: 20px;">
+                    <div>
+                        <div class="form__group">
+                            <p>Min Price</p>
+                            <div class="form__group-input filter__input">$50</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="form__group">
+                            <p>Max Price</p>
+                            <div class="form__group-input filter__input">$1000+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="place-type filter__section">
+                <h5>Type of place</h5>
+                <div class="place-type__item"><span></span>
+                    <div>
+                        <p>Entire Place</p><small>A place all to yourself</small>
+                    </div>
+                </div>
+                <div class="place-type__item"><span></span>
+                    <div>
+                        <p>Private room</p><small>Your own room in a home or a hotel, plus some shared common
+                            spaces.</small>
+                    </div>
+                </div>
+                <div class="place-type__item"><span></span>
+                    <div>
+                        <p> Shared room </p><small>A sleeping space and common areas that may be shared with
+                            others.</small>
+                    </div>
+                </div>
+            </div>
+            <div class="place-options filter__section">
+                <h5>Bedrooms, Beds, Bath</h5>
+                <div class="place-option__item">
+                    <p>bedrooms</p><span
+                        class="active">Any</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5+</span>
+                </div>
+                <div class="place-option__item">
+                    <p>beds</p><span
+                        class="active">Any</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5+</span>
+                </div>
+                <div class="place-option__item">
+                    <p>bathrooms</p><span
+                        class="active">Any</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5+</span>
+                </div>
+            </div>
+        </div>
+        <div class="filter__button"><button disabled="">Show 350 Homes</button></div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+@import '../../../breakpoints.scss';
+@include tablet {
+    // .layout {
+    //   display: block !important;
+    // }
+  }
+
+  .hide{
+    visibility: hidden;
+  }
+
+  .show{
+    visibility: visible;
+  }
+  .filt{
+    display: contents;
+  }
+
+  

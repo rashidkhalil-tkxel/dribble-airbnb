@@ -1,0 +1,148 @@
+@import '../../../../breakpoints.scss';
+
+
+.sidebar {
+	width: 90px;
+	border-right: 1px solid #e7e7e7;
+	padding: 1rem 0;
+	color: #414141;
+	transition: all 0.3s;
+
+	p {
+		margin-bottom: 0;
+		text-transform: capitalize;
+		white-space: nowrap;
+		visibility: hidden;
+		opacity: 0;
+		transition: all 0.1s;
+		font-size: 14px;
+	}
+
+	span {
+		font-size: 20px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+		padding: 0.5rem 0 0.5rem 2rem;
+		gap: 10px;
+		height: 50px;
+		margin: 5px 0;
+		cursor: pointer;
+
+		&:hover {
+			background-color: #e7e7e7;
+		}
+	}
+
+	.active {
+		position: relative;
+		font-weight: 500;
+
+		&::after {
+			content: '';
+			position: absolute;
+			right: 0;
+			height: 100%;
+			background-color: #ff385c;
+			width: 3px;
+		}
+	}
+
+	&:hover {
+		width: 250px;
+		p {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+}
+@include tablet {
+	.sidebar {
+		&:hover {
+			width: 180px;
+			p {
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+	}
+}
+
+// @include tablet {
+// 	.sidebar {
+// 		overflow: auto;
+// 		width: 100%;
+// 		white-space: nowrap;
+// 		-ms-overflow-style: none;
+// 		scrollbar-width: none;
+// 		padding: 0 1rem;
+
+// 		&:hover {
+// 			width: 100%;
+// 		}
+
+// 		&::-webkit-scrollbar {
+// 			display: none;
+// 		}
+
+// 		p {
+// 			display: none;
+// 		}
+
+// 		span {
+// 			font-size: 25px;
+// 			display: flex;
+// 			align-items: center;
+// 			justify-content: center;
+// 		}
+
+// 		.sidebar__item {
+// 			display: inline-flex;
+// 			margin-right: 20px;
+// 			align-items: center;
+// 			justify-content: center;
+// 			padding: 0;
+// 			cursor: pointer;
+
+// 			&:hover {
+// 				background-color: #e7e7e7;
+// 			}
+// 		}
+
+// 		.active {
+// 			position: relative;
+// 			font-weight: 500;
+
+// 			&::after {
+// 				content: '';
+// 				position: absolute;
+// 				bottom: 0;
+// 				left: 0;
+// 				height: 3px;
+// 				background-color: linear-gradient(
+// 					95.006deg,
+// 					rgb(211, 59, 80) 0%,
+// 					rgb(198, 47, 101) 100%
+// 				);
+// 				width: 100%;
+// 			}
+// 		}
+// 	}
+// }
+
+
+// @media (max-width: 800px) {
+// .sidebar {
+//     overflow: auto;
+//     width: 100%;
+//     white-space: nowrap;
+//     -ms-overflow-style: none;
+//     scrollbar-width: none;
+//     padding: 0 1rem;
+// }
+// }
