@@ -89,3 +89,59 @@ img {
   background-color: #e61818 !important;
   color: #fff;
 }
+
+@keyframes divAnimationEnter {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes divAnimationLeave {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.divAnimation-enter {
+  animation: divAnimationEnter 0.8s;
+}
+
+.divAnimation-leave {
+  animation: divAnimationLeave 0.8s;
+}
+
+@keyframes buttonAnimationEnter {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes buttonAnimationLeave {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+.buttonAnimation-enter {
+  animation: buttonAnimationEnter 0.8s;
+}
+
+.buttonAnimation-leave {
+  animation: buttonAnimationLeave 1s;
+}

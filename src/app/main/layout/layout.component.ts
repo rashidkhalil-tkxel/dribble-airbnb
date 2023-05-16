@@ -29,15 +29,15 @@ onHouseDetail(event:HouseDataTypes,template: TemplateRef<any>){
     backdrop: true,
     id:"myModal",
     ignoreBackdropClick: false,
-    class: "house-detail animate__animated animate__slideInRight"
+    class: "house-detail divAnimation-enter "
   };
   // bounce-in-right
   console.log("test",event,);
   this.modalRef = this.modalService.show(template,config);
   setTimeout(() => {
     const element:any = document.querySelector('.house-detail');
-  if (element.classList.contains("animate__animated")) {
-    element.classList.remove("animate__slideInRight");
+  if (element.classList.contains("divAnimation-enter")) {
+    element.classList.remove("divAnimation-enter");
     // $(".house-detail").addClass('animate__fadeOutRight') 
   } 
   }, 1000);
@@ -50,8 +50,8 @@ onCloseHouseDetail(event:object){
   console.log( $(".house-detail"));
   const element:any = document.querySelector('.house-detail');
   // if (element.classList.contains("animate__slideInRight")) {
-    element.classList.remove("animate__slideInRight");
-    $(".house-detail").addClass('animate__fadeOutRight') 
+    element.classList.remove("divAnimation-enter");
+    $(".house-detail").addClass('divAnimation-leave') 
   // } 
   setTimeout(() => {
     this.modalRef?.hide();

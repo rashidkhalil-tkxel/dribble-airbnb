@@ -24,7 +24,7 @@ export const divAnimation = trigger('divAnimation', [
   selector: 'app-house-details',
   templateUrl: './house-details.component.html',
   styleUrls: ['./house-details.component.scss'],
-  // animations: [buttonAnimation,divAnimation ]
+  // animations: [buttonAnimation ]
   // animations: [
   //   trigger('bounce', [transition('* => *', useAnimation(flipInX))])
   // ]
@@ -74,20 +74,29 @@ export const divAnimation = trigger('divAnimation', [
 })
 export class HouseDetailsComponent {
 
-  
+  isEnter = true;
+  isLeave = false;
 
   @Input() house!:HouseDataTypes;
   @Output() onCloseHouseDetail = new EventEmitter<Object>();
 
   closeHouseDetail(){
-    this.onCloseHouseDetail.emit('close')
+    this.isLeave = true;
+    setTimeout(() => {
+      this.onCloseHouseDetail.emit('close') 
+    }, 300);
+    
   }
 
 
   ngOnChanges(changes: SimpleChanges) {
     console.log(changes)
   }
-  ngOnInit(){  
+  ngOnInit(){ 
+    console.log("ddd")
+    setTimeout(() => {
+      this.isEnter = true;
+    }, 300); 
   }
 
   doFavourite(house:HouseDataTypes){
