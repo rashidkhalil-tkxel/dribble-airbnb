@@ -471,13 +471,19 @@ padding: 2rem;
     height: auto;
 } 
 .checkout__date {
-    display: inline-table;
+    // display: inline-table;
+    display: block;
 }
 .rating__bar-container{
     width: 40% !important;
 }
 .checkout { 
     padding: 0.5rem 0.5rem; 
+}
+.btn__close{
+  z-index: 1001;
+  color: white;
+  background-color: black;
 }
 }
 
@@ -489,13 +495,19 @@ padding: 2rem;
         height: auto;
     } 
     .checkout__date {
-        display: inline-table;
+        // display: inline-table;
+        display: block;
     }
     .rating__bar-container{
         width: 40% !important;
     }
     .checkout { 
         padding: 0.5rem 0.5rem; 
+    }
+    .btn__close{
+      z-index: 1001;
+      color: white;
+      background-color: black;
     }
   }
 

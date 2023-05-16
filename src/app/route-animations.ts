@@ -65,7 +65,7 @@ import {
           ":enter",
           [
             style({ transform: "translateX(100%)" }),
-            animate("0.5s ease-in-out", style({ transform: "translateX(0%)" }))
+            animate("0.8s ease-in-out", style({ transform: "translateX(0%)" }))
           ],
           { optional: true }
         ),
@@ -73,7 +73,7 @@ import {
           ":leave",
           [
             style({ transform: "translateX(0%)" }),
-            animate("0.5s ease-in-out", style({ transform: "translateX(-100%)" }))
+            animate("0.8s ease-in-out", style({ transform: "translateX(-100%)" }))
           ],
           { optional: true }
         )

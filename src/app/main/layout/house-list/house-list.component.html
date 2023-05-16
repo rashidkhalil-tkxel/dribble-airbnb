@@ -3,7 +3,7 @@
     <div class="row">
         <ng-container *ngFor="let house of data">
             <div class="pt-3 ps-0 pe-4 col-lg-3 col-md-6" >
-                <div class="house-card  house-detail-list">
+                <div class="house-card  house-detail-list"  (click)="openHouseDetails(house)">
                     <div class="likeBtn" (click)="doFavourite(house)" [class.fav]="house.isFavourite">
                         <svg   stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24"
                             aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
@@ -13,7 +13,7 @@
                         </svg>
                     </div>
                     <div class="house-card__image"><img src="{{house.images[0]}}" alt=""></div>
-                    <div class="house-card__content"  (click)="openHouseDetails(house)">
+                    <div class="house-card__content" >
                         <h2>{{house.name}}</h2>
                         <p class="house-card__location">{{house.location}}</p>
                         <div class="house-card__price">
