@@ -18,23 +18,42 @@
         </span>
     </div>
     <div class='booking__search'>
-        <div class='booking__select dropdown'>
-            <p>Anywhere</p> 
-            <svg stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true" 
-                class="ms-auto" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+        <div class='booking__select dropdown' data-toggle="dropdown" data-display="static">
+            <p>{{booking}}</p> 
+            <svg    stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true" 
+                class="ms-auto cursor-pointer" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
             </svg> 
+            <div class="dropdown-menu w-100 menu-any"  >
+                <a  class="dropdown-item" (click)="selectBooking('Anywhere')">Anywhere</a>
+                <a  class="dropdown-item" (click)="selectBooking('two')">two</a>
+                <a  class="dropdown-item" (click)="selectBooking('three')">three</a>
+                <a  class="dropdown-item" (click)="selectBooking('four')">four</a>
+            </div>
         </div>
         
         
         <div class='booking__select'>
-            <svg stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true" height="20"
+            <!-- <svg stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true" height="20"
                 width="20" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round"
                     d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5">
                 </path>
             </svg>
-            <p>August 21-26</p>
+            <p>August 21-26</p> -->
+            <div class="input-group">
+                <!-- (click)="openDate($event,date_f)" -->
+                <div class="input-group-append ">
+                    <svg class="date-f-icon" stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true" height="20"
+                    width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5">
+                    </path>
+                </svg>
+                </div>
+                <input id="date" #date_f type="text" class="form-control date-f" placeholder="" value="August 21-26">
+               
+              </div>
         </div>
         <div class='booking__select'>
             <button (click)="addGuest('minus')">

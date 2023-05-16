@@ -122,3 +122,30 @@
   }
 }
 
+.date-f{
+  background: transparent;
+  border: 0;
+  font-size: 12px;
+}
+
+.date-f-icon{
+  position: relative;
+    top: 15%;
+}
+
+.date-f:focus { 
+  box-shadow: none;
+}
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+.menu-any{
+  right: 1px;
+  top: 50px;
+}
+.cursor-pointer{
+  cursor: pointer;
+}
