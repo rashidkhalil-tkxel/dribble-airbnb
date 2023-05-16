@@ -3,9 +3,9 @@
       <img src="assets/logo.png" alt='' />
     </div>
     <div class='navigation__links'>
-      <span class='navigation__link active'>Stays</span>
-      <span class='navigation__link'>Experiences</span>
-      <span class='navigation__link'>Online Experiences</span>
+      <a routerLink="/main" class="text-decoration-none"><span class='navigation__link ' routerLinkActive="active">Stays</span></a>
+      <a routerLink="/experiences" class="text-decoration-none"><span class='navigation__link' routerLinkActive="active">Experiences</span></a>
+      <a routerLink="/online-experiences" class="text-decoration-none"><span class='navigation__link'  routerLinkActive="active">Online Experiences</span></a>
     </div>
     <div class='navigation__user'>
       <img class="user-image" src="assets/profile picture.jpg" alt="user-pic" />
@@ -23,8 +23,8 @@
     aria-labelledby="dropdownMenuButton">
     <li class="dropdown-item">
       <img class="user-image menu-image rounded-circle" src="assets/profile picture.jpg" alt="user-pic" /> </li>
-    <li class="dropdown-item active">  Stays</li>
-    <li class="dropdown-item"> Experiences</li>
-    <li class="dropdown-item">  Online Experiences</li>
+    <li class="dropdown-item d-menu-item"  routerLinkActive="active"> <a  class="text-decoration-none" routerLink="/main">1Stays</a> </li>
+    <li class="dropdown-item d-menu-item"  routerLinkActive="active"> <a  class="text-decoration-none" routerLink="/experiences">Experiences</a></li>
+    <li class="dropdown-item d-menu-item"  routerLinkActive="active">  <a  class="text-decoration-none"  routerLink="/online-experiences">Online Experiences</a></li>
 </ul>
 </div>

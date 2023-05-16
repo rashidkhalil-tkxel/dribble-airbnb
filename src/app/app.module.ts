@@ -12,6 +12,9 @@ import { SideBarComponent } from './main/layout/side-bar/side-bar.component';
 import { HouseListComponent } from './main/layout/house-list/house-list.component';
 import { HouseDetailsComponent } from './main/layout/house-details/house-details.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { ExperiencesComponent } from './experiences/experiences.component';
+import { OnlineExperiencesComponent } from './online-experiences/online-experiences.component';
+import { ComingSoonComponent } from './coming-soon/coming-soon.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +25,10 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     LayoutComponent,
     SideBarComponent,
     HouseListComponent,
-    HouseDetailsComponent
+    HouseDetailsComponent,
+    ExperiencesComponent,
+    OnlineExperiencesComponent,
+    ComingSoonComponent
   ],
   imports: [
     BrowserModule,

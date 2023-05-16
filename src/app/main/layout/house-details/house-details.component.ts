@@ -2,10 +2,29 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core'; 
 import { HouseDataTypes } from '../house-list/houses';
 declare var $:any;
+export const buttonAnimation = trigger('buttonAnimation', [
+  transition(':enter', [
+    style({ opacity: 0, transform: 'translateX(100%)' }),
+    animate('0.5s', style({ opacity: 1, transform: 'translateX(0)' }))
+  ]),
+  transition(':leave', [
+    animate('0.5s', style({ opacity: 0, transform: 'translateX(100%)' }))
+  ])
+]);
+export const divAnimation = trigger('divAnimation', [
+  transition(':enter', [
+    style({ transform: 'translateX(100%)' }),
+    animate('0.5s', style({ transform: 'translateX(0)' }))
+  ]),
+  transition(':leave', [
+    animate('0.5s', style({ transform: 'translateX(100%)' }))
+  ])
+]);
 @Component({
   selector: 'app-house-details',
   templateUrl: './house-details.component.html',
   styleUrls: ['./house-details.component.scss'],
+  // animations: [buttonAnimation,divAnimation ]
   // animations: [
   //   trigger('bounce', [transition('* => *', useAnimation(flipInX))])
   // ]
@@ -68,11 +87,7 @@ export class HouseDetailsComponent {
   ngOnChanges(changes: SimpleChanges) {
     console.log(changes)
   }
-  ngOnInit(){ 
-    $('.modal').on('hide.bs.modal', function (e:any) {
-      console.log("ete");
-      $('.modal .modal-dialog').attr('class', 'modal-dialog  fadeOut  animated');
-    })
+  ngOnInit(){  
   }
 
   doFavourite(house:HouseDataTypes){

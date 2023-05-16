@@ -82,3 +82,20 @@
     height: 50px;
     width: 50px;
   }
+
+  .d-menu-item.active{
+    a{
+      color: white;
+    }
+    
+    &::after{
+      width: 100% !important;
+    }
+   
+  }
+  .dropdown-menu{
+    @include breakpoint("800px") {
+      display : none;
+    }
+   
+  }

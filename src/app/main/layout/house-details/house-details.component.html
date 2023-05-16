@@ -1,9 +1,10 @@
-<div class="house-modal animate__slideInRight">
-
+<div class="house-modal" >
+    <!-- [@divAnimation] -->
     <!-- <button type="button" class="btn__close" aria-label="Close"  >
         <span aria-hidden="true" class="visually-hidden">&times;</span>
       </button> -->
-    <button class="btn__close animate__animated animate__fadeInLeft" type="button" (click)="closeHouseDetail()"
+      <!-- [@buttonAnimation] -->
+    <button class="btn__close"    type="button" (click)="closeHouseDetail()"
         style="opacity: 1; transform: translateX(0%) translateZ(0px);"><svg stroke="currentColor" fill="currentColor"
             stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
             <path fill="none" d="M0 0h24v24H0z"></path>
@@ -16,13 +17,13 @@
         <div class="house-details">
             <div class="house-details__images row">
                 <div class="house-details__image col-lg-7 col-md-8 col-sm-8  col-xs-8  col-8">
-                    <div class="house-details__image--1"><img src="{{house.images[0]}}" alt=""><span>View all
+                    <div class="house-details__image--1"><img src="{{house.images[0]}}" alt=""  loading="lazy"><span>View all
                             photos</span></div>
                 </div>
                 <div
                     class="house-details__image d-flex flex-column justify-content-between gap-4  col-lg-5 col-md-4 col-sm-4  col-xs-4  col-4">
-                    <div class="house-details__image--2"><img src="{{house.images[1]}}" alt=""></div>
-                    <div class="house-details__image--3"><img src="{{house.images[2]}}" alt=""></div>
+                    <div class="house-details__image--2"><img src="{{house.images[1]}}" alt=""  loading="lazy"></div>
+                    <div class="house-details__image--3"><img src="{{house.images[2]}}" alt=""  loading="lazy"></div>
                 </div>
             </div>
             <div class="house-details__content">
