@@ -156,7 +156,7 @@
                             Superhost</span>
                       
                                 <div class="row">
-                                    <div class="col-10">
+                                    <div class="col-9">
                                         <h3 class="house__info-name">{{house.name}}</h3>
                                         <p class="house__info-location">{{house.location}}</p>
                                         <div class="house__info--features"><span><svg stroke="currentColor" fill="currentColor"
@@ -188,7 +188,7 @@
                                                 </svg><small>{{house.baths}} baths</small></span>
                                             </div>
                                     </div>
-                                    <div class="col-2">
+                                    <div class="col-3">
                                         <div class="house__info-buttons">
                                             <div class="cursor-pointer btn-info">
                                                 <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24"
@@ -366,7 +366,7 @@
                                     <path
                                         d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z">
                                     </path>
-                                </svg>4.8 - 124 reviews</span>
+                                </svg>  {{house.average_rating| number : '1.1-2'}} - 124 reviews</span>
                         </div>
                         <div class="reviews__ratings">
                             <ng-container *ngFor="let rate of house.ratings">
@@ -471,7 +471,7 @@
                                     <h6>Hosted by Brenda</h6><small>Joined August 2014</small>
                                 </div>
                             </div>
-                            <div class="host__contact">Contact Host</div>
+                            <div class="host__contact" style="cursor: pointer;">Contact Host</div>
                         </div>
                         <div class="host__badges"><span><svg stroke="currentColor" fill="currentColor" stroke-width="0"
                                     viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
