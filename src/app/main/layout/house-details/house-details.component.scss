@@ -24,6 +24,15 @@
 
   @media (max-width: 1000px) {
     left: 85%;
+    z-index: 1001;
+    color: white;
+    background-color: black;
+  }
+}
+
+@media (min-width:1001px) and (max-width:1119px) {
+  .btn__close {
+    left: 19%;
   }
 }
 
@@ -513,12 +522,20 @@
     padding: 0.5rem 0.5rem;
   }
 
-  .btn__close {
-    z-index: 1001;
-    color: white;
-    background-color: black;
-  }
+  // .btn__close {
+  //   z-index: 1001;
+  //   color: white;
+  //   background-color: black;
+  // }
 }
+
+// @media (max-width: 1000px) {
+//   .btn__close {
+//     z-index: 1001;
+//     color: white;
+//     background-color: black;
+//   }
+// }
 
 @include tablet {
   .mobile-hidden {
@@ -542,11 +559,11 @@
     padding: 0.5rem 0.5rem;
   }
 
-  .btn__close {
-    z-index: 1001;
-    color: white;
-    background-color: black;
-  }
+  // .btn__close {
+  //   z-index: 1001;
+  //   color: white;
+  //   background-color: black;
+  // }
 }
 
 p {
