@@ -1,4 +1,5 @@
 
+@import '../../../../breakpoints.scss';
 .bounce-in-right {
 	animation: bounce-in-right 2s ease;
   }
@@ -93,7 +94,7 @@
 	display: flex;
 	align-items: flex-start;
 	flex: 0 0 auto;
-	gap: 10px;
+	gap: 3px;
 	padding: 1rem 0;
 
 	p {
@@ -179,3 +180,57 @@
 	  }
 	}
   }
+
+  @include media(mobile, mobilexs,tablet) {
+	.filter  { 
+		height: calc(100vh - 235px);
+  }
+}
+.spa-2,.spa-3{
+	width: 25px !important;
+}
+.input-symbol-dollar {
+	position: relative;
+	display: block;
+  }
+  .input-symbol-dollar:after {
+	  color: #37424a !important;
+	  content: "$";
+	  font-size: 15px !important;
+	  font-weight: 400;
+	  position: absolute;
+	  
+	  display: block;
+	  height: 100%;
+	  top: -1.5px;
+	  left: 10px;
+	  line-height: 42px;
+  }
+  
+  .abc-input {
+	border: 1px solid #e7e7e7;
+	  box-shadow: none;
+	  color: #6b6f72;
+	  font-size: 14px;
+	  text-transform: none;
+	  width: 100%;
+	  color: #37424a !important;
+	  font-family: "Roboto Regular",sans-serif;
+	  font-size: 14px !important;
+	  font-weight: 400;
+	  height: 40px !important;
+	  padding-left: 17px !important;
+	  display: inline-block !important;
+	  border-radius: 5px;
+  }
+ 
+  label {
+	font-size: 12px;
+    margin-bottom: 5px;
+	color:  #212529;;
+}
+
+.form-check-input {
+    width: 1.2em;
+    height: 1.2em;
+}
