@@ -92,10 +92,7 @@ img {
 
 .isSticked{
   .filter{
-    height: calc(100vh - 77px) !important;
-    animation-duration: 0.3s;
-  animation-name: lineInserted;
-  transition: height 0.3s;
+    height: calc(100vh - 77px) !important; 
   @media (max-width: 800px) {
     height: calc(100vh - 163px) !important;
   }
