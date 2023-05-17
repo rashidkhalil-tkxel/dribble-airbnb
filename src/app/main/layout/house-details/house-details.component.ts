@@ -1,6 +1,7 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core'; 
 import { HouseDataTypes } from '../house-list/houses';
+import { numberWithCommas } from 'src/app/directives/utilities';
 declare var $:any;
 export const buttonAnimation = trigger('buttonAnimation', [
   transition(':enter', [
@@ -75,7 +76,7 @@ export const divAnimation = trigger('divAnimation', [
 export class HouseDetailsComponent {
 
   
-
+  numberWithCommas = numberWithCommas;
   @Input() house!:HouseDataTypes;
   @Output() onCloseHouseDetail = new EventEmitter<Object>();
 

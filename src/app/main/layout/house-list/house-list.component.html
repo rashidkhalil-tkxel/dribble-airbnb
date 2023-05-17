@@ -3,8 +3,8 @@
     <div class="row">
         <ng-container *ngFor="let house of data">
             <div class="pt-3 ps-0 pe-4 col-lg-3 col-md-6" >
-                <div class="house-card  house-detail-list"  (click)="openHouseDetails(house)">
-                    <div class="likeBtn" (click)="doFavourite(house)" [class.fav]="house.isFavourite">
+                <div class="house-card  house-detail-list"  (click)="openHouseDetails(house)"  [class.focusIn]="focusIn">
+                    <div class="likeBtn" (click)="doFavourite(house)" [class.fav]="house.isFavourite" (mouseout)="focuslost()" (mouseover)="focus()">
                         <svg   stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24"
                             aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -17,7 +17,7 @@
                         <h2>{{house.name}}</h2>
                         <p class="house-card__location">{{house.location}}</p>
                         <div class="house-card__price" style="    padding-bottom: 5px;">
-                            <p style="margin-bottom: 0;"><span class="value">${{house.price_per_night}}</span> / night</p><span class="rating"><svg stroke="currentColor"
+                            <p style="margin-bottom: 0;"><span class="value">${{numberWithCommas(house.price_per_night)}}</span> / night</p><span class="rating"><svg stroke="currentColor"
                                     fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="20" width="20"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <g fill="none">

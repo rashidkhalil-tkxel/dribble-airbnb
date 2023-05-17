@@ -2,7 +2,7 @@
 
 .btn__close {
   position: fixed;
-  left: 20%;
+  left: 21%;
   // left: -6%; 
   top: unset;
   margin-top: 20px;
@@ -83,6 +83,7 @@
 
   &__content {
     padding: 2rem 0;
+    padding-bottom: 0;
     display: grid;
     grid-template-columns: 3fr 1.2fr;
     gap: 30px;
@@ -178,11 +179,11 @@
       font-size: 20px;
 
       small {
-        font-size: 16px;
+        font-size: 14px;
       }
     }
 
-    @media (max-width: 1000px) {
+    @media (max-width: 1024px) {
       display: block;
 
       span {
@@ -239,7 +240,7 @@
 
 .more {
   margin-top: 1rem;
-  color: #ff385c;
+  color: rgb(211, 59, 80);
   font-weight: 500;
   cursor: pointer;
   display: block;
@@ -351,6 +352,7 @@
 
     @include mobile {
       margin-top: 20px;
+      width: 150px;
     }
 
     &:hover {
@@ -382,7 +384,7 @@
 
 .checkout__container {
   position: sticky;
-  top: 0;
+  top: 20px;
 }
 
 .checkout {
@@ -527,6 +529,12 @@
     padding: 0.5rem 0.5rem;
   }
 
+  .house-details__content--checkout{
+    padding-left: 0px;
+  }
+.viewAll{
+  font-size: 14px;
+}
   // .btn__close {
   //   z-index: 1001;
   //   color: white;
@@ -623,4 +631,19 @@ p {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.superh{
+  position: relative;
+  top: -2px;
+}
+
+.t-icon{
+  opacity: 0.6;
+    position: relative;
+    top: -1px;
+}
+
+.before-texas,.date-may{
+  opacity: 0.6; 
 }

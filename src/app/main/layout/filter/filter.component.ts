@@ -7,7 +7,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class FilterComponent {
   @Output() onFilterShow = new EventEmitter<boolean>();
-
+  OnlyNumber = true;
   onFilterDivClick() {
     // this.onFilterShow.emit(false);
   }
@@ -32,6 +32,8 @@ export class FilterComponent {
       } else {
         console.log('clicked inside of div')
       }
-    }).bind(this)
+    })
   }
 }
+
+

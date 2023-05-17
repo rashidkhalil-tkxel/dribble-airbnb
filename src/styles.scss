@@ -89,3 +89,27 @@ img {
   background-color: #e61818 !important;
   color: #fff;
 }
+
+.isSticked{
+  .filter{
+    height: calc(100vh - 77px) !important;
+    animation-duration: 0.3s;
+  animation-name: lineInserted;
+  transition: height 0.3s;
+  @media (max-width: 800px) {
+    height: calc(100vh - 163px) !important;
+  }
+  }
+  
+}
+
+@keyframes lineInserted {
+  from {
+    height: 0;
+  }
+  to {
+    height: 20px; /* your line height here */
+  }
+}
+
+ 

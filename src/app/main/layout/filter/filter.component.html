@@ -4,32 +4,40 @@
     <div id="filter" class="filter show" style="transform: translateX(0%) translateZ(0px);" >
         <div>
             <div class="filter__header filter__section">
-                <h5>Filter</h5><span> Clear all</span>
+                <h5>Filter</h5><span style="cursor: pointer;"> Clear all</span>
             </div>
             <div class="filter__price filter__section">
-                <h5>Price Range</h5><small>The average nightly price is $133</small>
+                <h5>Price range</h5><small style="opacity: 0.8;">The average nightly price is $133</small>
                 <div class="checkout__date" style="margin-top: 20px;">
-                    <div style="    margin-bottom: 20px;">
-                        <label for="abcInput" class="abc-label">Min Price </label>
-                        <span class="input-symbol-dollar">
-                            <input  type="text" id="abcInput" tabindex="0" name="abc" class="abc-input "  placeholder="0.00"></span>
-                        <!-- <div class="form__group">
-                            <p>Min Price</p>
-                            <div class="form__group-input filter__input">$50</div>
-                        </div> -->
-                    </div>
-                    <!-- <div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div style="    margin-bottom: 20px;">
+                                <label for="abcInput" class="abc-label" style="opacity: 0.8;">Min Price </label>
+                                <span class="input-symbol-dollar">
+                                    <input OnlyNumber="OnlyNumber" style="padding-left: 18px !important;" type="text" id="abcInput" tabindex="0" name="abc" class="abc-input "  placeholder="0"></span>
+                                <!-- <div class="form__group">
+                                    <p>Min Price</p>
+                                    <div class="form__group-input filter__input">$50</div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-6">
+                              <!-- <div>
                         <div class="form__group">
                             <p>Max Price</p>
                             <div class="form__group-input filter__input">$1000+</div>
                         </div>
                     </div> -->
                     <div style="    margin-bottom: 20px;">
-                        <label for="abcInput" class="abc-label">Max Price </label>
+                        <label for="abcInput" class="abc-label" style="opacity: 0.8">Max Price </label>
                         <span class="input-symbol-dollar">
-                            <input  type="text" id="abcInput" tabindex="0" name="abc" class="abc-input "  placeholder="0.00"></span>
+                            <input OnlyNumber="OnlyNumber" style="padding-left: 18px !important;"  type="text" id="abcInput" tabindex="0" name="abc" class="abc-input "  placeholder="0"></span>
                          
                     </div>
+                        </div>
+                    </div>
+                 
+                  
                 </div>
             </div>
             <div class="place-type filter__section">
@@ -65,7 +73,7 @@
                 </div>
             </div>
             <div class="place-options filter__section">
-                <h5>Bedrooms, Beds, Bath</h5>
+                <h5>Rooms, beds, and baths</h5>
                 <div class="place-option__item">
                     <p>bedrooms</p><span
                         class="active">Any</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5+</span>

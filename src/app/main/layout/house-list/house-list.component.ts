@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { HouseDataTypes, housesData } from './houses';
+import { numberWithCommas } from 'src/app/directives/utilities';
 
 @Component({
   selector: 'app-house-list',
@@ -9,8 +10,13 @@ import { HouseDataTypes, housesData } from './houses';
 export class HouseListComponent {
   data: HouseDataTypes[] = housesData;
   @Output() onHouseDetail = new EventEmitter<HouseDataTypes>();
+  numberWithCommas = numberWithCommas;
 
+  focusIn:boolean = false;
   openHouseDetails(house:HouseDataTypes) {
+    if(this.focusIn){
+      return;
+    }
     this.onHouseDetail.emit(house)
   }
 
@@ -18,6 +24,14 @@ export class HouseListComponent {
   
     house.isFavourite = !house.isFavourite;
     console.log("house",house)
+  }
+
+  focuslost(){
+    this.focusIn = false;
+  }
+
+  focus(){
+    this.focusIn = true;
   }
   
 }

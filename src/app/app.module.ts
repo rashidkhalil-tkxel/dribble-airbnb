@@ -15,6 +15,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { ExperiencesComponent } from './experiences/experiences.component';
 import { OnlineExperiencesComponent } from './online-experiences/online-experiences.component';
 import { ComingSoonComponent } from './coming-soon/coming-soon.component';
+import { OnlyNumber } from './directives/only-number';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { ComingSoonComponent } from './coming-soon/coming-soon.component';
     HouseDetailsComponent,
     ExperiencesComponent,
     OnlineExperiencesComponent,
-    ComingSoonComponent
+    ComingSoonComponent,
+    OnlyNumber
   ],
   imports: [
     BrowserModule,
