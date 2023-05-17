@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, Renderer2 } from '@angular/core';
 declare var $: any;
 @Component({
   selector: 'app-booking-bar',
@@ -10,9 +10,17 @@ export class BookingBarComponent {
   @Input() showFilter: boolean = false;
   @Output() onFilterShow = new EventEmitter<boolean>();
   guest = 5;
+
+constructor(private renderer: Renderer2)
+{
+  
+}
   onFilter() {
     console.log("test");
     this.showFilter = !this.showFilter;
+    if(this.showFilter){
+      this.renderer.addClass(document.body, 'noScroll');
+    }
     this.onFilterShow.emit(this.showFilter);
   }
 

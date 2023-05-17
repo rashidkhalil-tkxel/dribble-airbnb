@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output,TemplateRef } from '@angular/core';
+import { Component, EventEmitter, Input, Output,Renderer2,TemplateRef } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal'; 
 import { HouseDataTypes } from './house-list/houses';
 declare var $:any;
@@ -12,12 +12,13 @@ export class LayoutComponent {
 @Output() onFilterShow = new EventEmitter<boolean>();
 house!:HouseDataTypes;
 modalRef?: BsModalRef;
-constructor(private modalService: BsModalService) {}
+constructor(private modalService: BsModalService,private renderer: Renderer2) {}
 
 openModal(template: TemplateRef<any>) {
   this.modalRef = this.modalService.show(template);
 }
 onFilterShowReceiver(event:boolean){
+  this.renderer.removeClass(document.body, 'noScroll');
   this.onFilterShow.emit(false);
 }
 
