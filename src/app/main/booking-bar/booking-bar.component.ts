@@ -17,7 +17,7 @@ export class BookingBarComponent {
   }
 
   addGuest(type: string) {
-    if (this.guest <= 0) {
+    if (this.guest <= 0 && type == 'minus') {
       return;
     }
     if (type == 'add') {
