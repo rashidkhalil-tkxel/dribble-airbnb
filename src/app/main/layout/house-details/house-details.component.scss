@@ -130,9 +130,12 @@
   }
 
   &-buttons {
-    position: absolute;
+    // position: absolute;
+    float: right;
     top: 0;
     right: 0;
+    position: relative;
+    top: 10px;
 
     button {
       height: 40px;
