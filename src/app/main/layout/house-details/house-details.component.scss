@@ -2,9 +2,10 @@
 
 .btn__close {
   position: fixed;
-  left: 21%;
+  left: 20%;
   // left: -6%; 
-  top: 20px;
+  top: unset;
+  margin-top: 20px;
   height: 40px;
   width: 40px;
   background-color: #fff;
@@ -27,6 +28,7 @@
     z-index: 1001;
     color: white;
     background-color: black;
+    margin-top: -54px;
   }
 }
 
