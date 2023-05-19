@@ -85,7 +85,8 @@
     padding: 2rem 0;
     padding-bottom: 0;
     display: grid;
-    grid-template-columns: 3fr 1.2fr;
+    // grid-template-columns: 3fr 1.2fr;
+    grid-template-columns: 2fr 1.2fr;
     gap: 30px;
 
     @include mobile {
@@ -184,7 +185,8 @@
       }
     }
 
-    @media (max-width: 1024px) {
+    // @media (max-width: 1024px) {
+      @media (max-width: 1275px) {
       display: block;
 
       span {
@@ -640,11 +642,13 @@ p {
 }
 
 .t-icon{
-  opacity: 0.6;
+  // opacity: 0.6;
+  color: rgb(113, 113, 113);
     position: relative;
     top: -1px;
 }
 
 .before-texas,.date-may{
-  opacity: 0.6; 
+  // opacity: 0.6; 
+  color: rgb(113, 113, 113);
 }

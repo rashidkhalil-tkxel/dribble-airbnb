@@ -27,6 +27,7 @@
       display: flex;
       align-items: center;
       gap: 40px;
+ 
   
       @include tablet {
         display: none;
@@ -35,10 +36,15 @@
   
     &__link {
       padding: 1rem 0;
-      color: #a3a5a3;
+      // color: #a3a5a3;
+      color: rgb(113, 113, 113);
+      font-weight: 400;
+      font-style: normal;
       height: 100%;
       display: flex;
       align-items: center;
+      margin-bottom: -10px;
+      padding-bottom: 23px;
     }
   
     .active {
