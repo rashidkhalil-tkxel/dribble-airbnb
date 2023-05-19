@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { HouseDataTypes, housesData } from './houses';
 import { numberWithCommas } from 'src/app/directives/utilities';
 
@@ -11,7 +11,7 @@ export class HouseListComponent {
   data: HouseDataTypes[] = housesData;
   @Output() onHouseDetail = new EventEmitter<HouseDataTypes>();
   numberWithCommas = numberWithCommas;
-
+  @Input() viewType : string = 'grid';
   focusIn:boolean = false;
   openHouseDetails(house:HouseDataTypes) {
     if(this.focusIn){

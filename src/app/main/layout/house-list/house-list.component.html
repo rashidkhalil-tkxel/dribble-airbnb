@@ -1,4 +1,7 @@
-<div class="w-100 p-4 pt-2" style="	border-left: 1px solid #e7e7e7;">
+<div *ngIf="viewType == 'list'" class="listing-v" style="transition: .3s all ease;">
+    <app-coming-soon></app-coming-soon>
+</div>
+<div class="w-100 p-4 pt-2" style="	border-left: 1px solid #e7e7e7;transition: .3s all ease;" *ngIf="viewType == 'grid'">
 
     <div class="row">
         <ng-container *ngFor="let house of data">
@@ -13,6 +16,7 @@
                         </svg>
                     </div>
                     <div class="house-card__image"><img src="{{house.images[0]}}" alt=""></div>
+                 
                     <div class="house-card__content" >
                         <h2>{{house.name}}</h2>
                         <p class="house-card__location">{{house.location}}</p>

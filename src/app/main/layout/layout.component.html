@@ -1,6 +1,6 @@
 <div class="d-flex gap-2 layout">
 <app-side-bar></app-side-bar>
-<app-house-list (onHouseDetail)="onHouseDetail($event,template)"></app-house-list>
+<app-house-list [viewType]="viewType" (onHouseDetail)="onHouseDetail($event,template)"></app-house-list>
 <!-- <app-filter [class.show]="showFilter == true" [class.hide]="showFilter == false" (onFilterShow)="onFilterShowReceiver($event)"></app-filter> -->
 <app-filter *ngIf="showFilter" class="filt" (onFilterShow)="onFilterShowReceiver($event)"></app-filter>
 </div>

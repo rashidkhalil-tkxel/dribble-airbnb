@@ -1,6 +1,6 @@
 <div class='booking'>
     <div class='booking__options'>
-        <span class='active'>
+        <span [class.active]="type == 'grid'" (click)="selectType('grid')">
             <svg stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true" height="20"
                 width="20" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -8,13 +8,30 @@
                 </path>
             </svg>
         </span>
-        <span>
-            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="20" width="20"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M560.02 32c-1.96 0-3.98.37-5.96 1.16L384.01 96H384L212 35.28A64.252 64.252 0 0 0 191.76 32c-6.69 0-13.37 1.05-19.81 3.14L20.12 87.95A32.006 32.006 0 0 0 0 117.66v346.32C0 473.17 7.53 480 15.99 480c1.96 0 3.97-.37 5.96-1.16L192 416l172 60.71a63.98 63.98 0 0 0 40.05.15l151.83-52.81A31.996 31.996 0 0 0 576 394.34V48.02c0-9.19-7.53-16.02-15.98-16.02zM224 90.42l128 45.19v285.97l-128-45.19V90.42zM48 418.05V129.07l128-44.53v286.2l-.64.23L48 418.05zm480-35.13l-128 44.53V141.26l.64-.24L528 93.95v288.97z">
-                </path>
-            </svg>
+        <span class="listing-v" [class.active]="type == 'list'" (click)="selectType('list')">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  stroke="currentColor" viewBox="0 0 20 20" preserveAspectRatio="none" width="20" height="20"><defs><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" id="svg64382197_679">
+                <g clip-path="url(#svg64382197_679_clip0_1684_46771)" fill="none">
+                <path d="M0.833336 5V18.3333L6.66667 15L13.3333 18.3333L19.1667 15V1.66666L13.3333 5L6.66667 1.66666L0.833336 5Z"   stroke-width="1.5px" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                <path d="M6.66666 1.66666V15"   stroke-width="1.5px" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                <path d="M13.3333 5V18.3333"  stroke-width="1.5px" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                </g>
+                <defs>
+                <clipPath id="svg64382197_679_clip0_1684_46771">
+                <rect width="20" height="20" fill="white"></rect>
+                </clipPath>
+                </defs>
+                </svg></defs><g>
+                <g clip-path="url(#svg64382197_679_clip0_1684_46771)" fill="none">
+                <path d="M0.833336 5V18.3333L6.66667 15L13.3333 18.3333L19.1667 15V1.66666L13.3333 5L6.66667 1.66666L0.833336 5Z"   stroke-width="1.5px" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                <path d="M6.66666 1.66666V15"   stroke-width="1.5px" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                <path d="M13.3333 5V18.3333"   stroke-width="1.5px" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                </g>
+                <defs>
+                <clippath id="svg64382197_679_clip0_1684_46771">
+                <rect width="20" height="20" fill="white"></rect>
+                </clippath>
+                </defs>
+                </g></svg>
         </span>
     </div>
     <div class='booking__search'>

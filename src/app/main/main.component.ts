@@ -8,8 +8,11 @@ import { Component } from '@angular/core';
 export class MainComponent {
 
   showFilter = false;
-
+  viewType = 'grid';
   onFilterShow(val:boolean){
       this.showFilter = val;
   }
+  onViewType(val:string){
+    this.viewType = val;
+}
 }
