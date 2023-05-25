@@ -84,7 +84,7 @@
               </div>
         </div>
         <div class='booking__select'>
-            <button (click)="addGuest('minus')"  [class.disabled]="guest <= 0">
+            <button  longPress (mouseLongPress)="addGuest('minus')" (click)="addGuest('minus')"  [class.disabled]="guest <= 0">
                 <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" aria-hidden="true"
                     height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd"
@@ -93,7 +93,7 @@
                 </svg>
             </button>
             <p class="font-14">{{guest}} guests</p>
-            <button (click)="addGuest('add')">
+            <button (click)="addGuest('add')"  longPress (mouseLongPress)="addGuest('add')">
                 <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" aria-hidden="true"
                     height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd"

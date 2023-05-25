@@ -16,6 +16,8 @@ import { ExperiencesComponent } from './experiences/experiences.component';
 import { OnlineExperiencesComponent } from './online-experiences/online-experiences.component';
 import { ComingSoonComponent } from './coming-soon/coming-soon.component';
 import { OnlyNumber } from './directives/only-number';
+import { NgbCarouselModule, NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { LongPressDirective } from './directives/long-press.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,13 +32,17 @@ import { OnlyNumber } from './directives/only-number';
     ExperiencesComponent,
     OnlineExperiencesComponent,
     ComingSoonComponent,
-    OnlyNumber
+    OnlyNumber,
+    LongPressDirective
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    NgbModule,
+    NgbCarouselModule,
+    NgbPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
