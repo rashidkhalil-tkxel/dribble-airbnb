@@ -9,8 +9,9 @@ export class BookingBarComponent {
   booking = 'Anywhere';
   @Input() showFilter: boolean = false;
   @Output() onFilterShow = new EventEmitter<boolean>();
+  @Output() onViewType= new EventEmitter<string>();
   guest = 5;
-
+  type = 'grid'
 constructor(private renderer: Renderer2)
 {
   
@@ -44,5 +45,11 @@ constructor(private renderer: Renderer2)
 
   selectBooking(bookingText: string) {
     this.booking = bookingText;
+  }
+
+  selectType(type:string){
+    this.type = type;
+    console.log('selectType',this.type);
+    this.onViewType.emit(this.type);
   }
 }

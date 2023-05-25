@@ -88,12 +88,14 @@
 
   &__options {
     @extend .booking__filter;
-
-    span {
-      &:first-child {
+    span{
+      cursor: pointer;
+    }
+    span.active {
+      // &:first-child {
         background-color: #000;
         color: #fff;
-      }
+      // }
     }
   }
 }
@@ -163,4 +165,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   font-size: 14px;
   color: rgb(17, 17, 17);
   font-weight: 400;
+}
+
+.listing-v{
+  color: #717171;
 }

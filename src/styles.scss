@@ -115,4 +115,30 @@ body.noScroll{
   overflow: hidden;
 }
 
- 
+.listing-v {
+  .wrapper  { 
+    top: 60% !important;
+  }
+}
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+ .cursor-pointer{
+  cursor: pointer;
+ }
+ .pagination{
+justify-content: center;
+ }
+ .page-link{
+  color: black !important;
+ }
+ .page-link.active, .active > .page-link {
+  z-index: 3;
+  color: var(--bs-pagination-active-color) !important;
+  background-color: #FE595F !important;
+  border-color: #FE595F !important;
+  
+}
+.page-link:focus {
+  box-shadow: none !important;
+  border-color: transparent !important;
+}

@@ -9,6 +9,7 @@ declare var $:any;
 })
 export class LayoutComponent {
 @Input() showFilter : boolean =false;
+@Input() viewType : string = 'grid';
 @Output() onFilterShow = new EventEmitter<boolean>();
 house!:HouseDataTypes;
 modalRef?: BsModalRef;
